@@ -1,0 +1,7 @@
+This is a test message for the HYDRA encryption algorithm.
+
+HYDRA is a novel encryption algorithm designed to provide high security against both classical and quantum threats.
+
+It employs a 4D hypercube state structure, adaptive round functions, and multi-domain protection mechanisms.
+
+This test file will be encrypted and then decrypted to verify that the algorithm works correctly.

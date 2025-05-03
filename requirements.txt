@@ -1,0 +1,24 @@
+# Core dependencies
+# None required for basic functionality
+
+# Development dependencies
+pytest>=6.0.0
+pytest-cov>=2.10.0
+black>=21.5b2
+isort>=5.8.0
+flake8>=3.9.0
+mypy>=0.812
+pylint>=2.8.0
+
+# Documentation dependencies
+sphinx>=4.0.0
+sphinx-rtd-theme>=0.5.0
+myst-parser>=0.15.0
+
+# Benchmarking dependencies
+matplotlib>=3.4.0
+numpy>=1.20.0
+
+# Optional dependencies for comparison
+cryptography>=36.0.0
+pycryptodomex>=3.12.0

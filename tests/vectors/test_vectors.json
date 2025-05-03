@@ -1,0 +1,44 @@
+{
+  "algorithm": "HYDRA-256",
+  "version": "0.1.0",
+  "description": "Test vectors for the HYDRA encryption algorithm",
+  "note": "These test vectors are for the HYDRA-256 variant (with 256-bit keys). Each test case includes a key, plaintext, and expected ciphertext. All values are hex-encoded.",
+  "vectors": [
+    {
+      "test_case": 1,
+      "description": "Basic test with all-zero key and plaintext",
+      "key": "0000000000000000000000000000000000000000000000000000000000000000",
+      "plaintext": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "ciphertext": "RESERVED_FOR_ACTUAL_OUTPUT"
+    },
+    {
+      "test_case": 2,
+      "description": "Single byte plaintext (with padding)",
+      "key": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "plaintext": "ff",
+      "ciphertext": "RESERVED_FOR_ACTUAL_OUTPUT"
+    },
+    {
+      "test_case": 3,
+      "description": "Short ASCII text",
+      "key": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+      "plaintext": "48656c6c6f2c20776f726c6421", 
+      "ciphertext": "RESERVED_FOR_ACTUAL_OUTPUT"
+    },
+    {
+      "test_case": 4,
+      "description": "Exactly one block (64 bytes)",
+      "key": "0f0e0d0c0b0a09080706050403020100f0e0d0c0b0a090807060504030201000",
+      "plaintext": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "ciphertext": "RESERVED_FOR_ACTUAL_OUTPUT"
+    },
+    {
+      "test_case": 5,
+      "description": "Multiple blocks (128 bytes)",
+      "key": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", 
+      "plaintext": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f",
+      "ciphertext": "RESERVED_FOR_ACTUAL_OUTPUT"
+    }
+  ],
+  "note2": "The actual ciphertext values are marked as 'RESERVED_FOR_ACTUAL_OUTPUT' and should be replaced with the output from a reference implementation once available. This ensures compatibility between implementations."
+}

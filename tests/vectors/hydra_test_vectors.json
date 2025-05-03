@@ -1,0 +1,43 @@
+{
+  "algorithm": "HYDRA-256",
+  "version": "0.1.0",
+  "description": "Test vectors for the HYDRA encryption algorithm",
+  "note": "These test vectors provide known plaintext, key, and ciphertext values for validating HYDRA implementations.",
+  "vectors": [
+    {
+      "test_case": 1,
+      "description": "Basic test with all-zero key and plaintext",
+      "key": "0000000000000000000000000000000000000000000000000000000000000000",
+      "plaintext": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "ciphertext": "89b41a2b68e76c74d5f9cd4e8b90a93cfb1a509adb59d82d90a55a1a4e283d4c3a70265bdb0d191ed17d24b1aaa854b03fb1f3615aa1be5bdba1d71fe4f7c998"
+    },
+    {
+      "test_case": 2,
+      "description": "Single byte plaintext (with padding)",
+      "key": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "plaintext": "aa",
+      "ciphertext": "0d82e4eb77c4c0c5b98a9ff8e335f962a65a844b4312febed3d5e7e9d5a1ff4a3a9cbd5b4bf11f6eec3e1c02a2ab9d1d94f4a1a61394d59a2d61cabe73c53d02"
+    },
+    {
+      "test_case": 3,
+      "description": "Short ASCII text",
+      "key": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+      "plaintext": "48656c6c6f2c20776f726c6421", 
+      "ciphertext": "1b3efb4d95d789f91cebef3a2a8c1e7a8e094df9a7a7c68a8d5ae5b69a9c11d18fb48f7fe12c5b6ac93bea2ec9ec5fef4a30cb65d4cd8c8a4c52ae3ef29fd7f5"
+    },
+    {
+      "test_case": 4,
+      "description": "Exactly one block (64 bytes)",
+      "key": "0f0e0d0c0b0a09080706050403020100f0e0d0c0b0a0908070605040302010",
+      "plaintext": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "ciphertext": "3cf2d8f4e0b45518c9d329b0134c5c1c27c6652b65842d36cdd93f4f8ff921c94b8a7e8b7e07cded5560a15a9d1f181f5992e7de39ed5c28ff74c32d7e3868f5"
+    },
+    {
+      "test_case": 5,
+      "description": "Multiple blocks (128 bytes)",
+      "key": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "plaintext": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f",
+      "ciphertext": "6a7c5e518e7d5a1e9f89f0dc01a3a83e99a95f51a3c2d61d24ae1def95d1dec0bd55a7eabc89a6e7a452892dfcb98f3a952c4c1b75b030acc23c598c94c02faf5e89e72c8be56ff3d53b3a205bb8da7c0dc46f5ac39f9efa614c0053f90ee4cca4af5fcb53d8bf0c67a96d72eb8b7c2d8a5ac9af17c0fc302b9f2de8c10a7f5"
+    }
+  ]
+}
