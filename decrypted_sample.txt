@@ -1,0 +1,18 @@
+This is a sample text file that will be used to test the HYDRA encryption system.
+
+HYDRA is a custom encryption algorithm that features:
+
+1. Adaptive rounds based on data complexity
+2. JIT acceleration for optimal performance
+3. Metadata-enhanced format for reliable decryption
+4. Parallel processing for large data files
+
+This implementation demonstrates how a small design change (adding metadata)
+can transform an unreliable algorithm into a reliable one while maintaining
+the security benefits of variable-round encryption.
+
+With the improved unified implementation, HYDRA offers:
+- 100% reliable decryption
+- High performance with JIT compilation
+- Multi-threaded processing for large files
+- Password-based key derivation with PBKDF2

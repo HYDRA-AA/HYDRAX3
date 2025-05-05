@@ -1,97 +1,114 @@
-# Contributing to HYDRA Encryption
+# Contributing to HYDRA
 
-Thank you for your interest in contributing to the HYDRA encryption project! This document provides guidelines and instructions for contributing.
-
-## Code of Conduct
-
-By participating in this project, you agree to maintain a respectful and inclusive environment for everyone.
+Thank you for your interest in contributing to the HYDRA encryption project! We welcome contributions from everyone.
 
 ## Ways to Contribute
 
 There are many ways to contribute to HYDRA:
 
-1. **Code Contributions**: Implement new features, fix bugs, or improve performance
-2. **Cryptanalysis**: Analyze the security properties of the algorithm
-3. **Documentation**: Improve or expand documentation, examples, and tutorials
-4. **Testing**: Create test vectors, improve test coverage, or identify edge cases
-5. **Review**: Review pull requests and provide feedback
-6. **Bug Reports**: Report bugs or security vulnerabilities (see [SECURITY.md](SECURITY.md) for reporting security issues)
+1. **Report Bugs**: Submit bug reports by creating an issue on GitHub
+2. **Request Features**: Suggest enhancements or new features
+3. **Improve Documentation**: Help make our documentation clearer and more comprehensive
+4. **Submit Code**: Contribute code improvements, fixes, or new features
+5. **Review Code**: Help review pull requests and ensure code quality
+6. **Security Analysis**: Analyze the algorithm and implementation for security concerns
+7. **Cryptanalysis**: Analyze the security properties of the algorithm
 
-## Getting Started
+## Code of Conduct
 
-1. **Fork the repository** on GitHub
-2. **Clone your fork** to your local machine
-3. **Create a branch** for your changes
-4. **Make your changes** following the coding standards
-5. **Add or update tests** as necessary
-6. **Run the tests** to ensure they pass
-7. **Commit your changes** with clear, descriptive commit messages
-8. **Push your changes** to your fork
-9. **Submit a pull request** to the main repository
+By participating in this project, you agree to maintain a respectful and inclusive environment for everyone. Follow the [code of conduct](CODE_OF_CONDUCT.md) in all interactions.
 
-## Pull Request Process
+## Development Process
 
-1. Ensure your code follows the project's coding standards
-2. Update documentation as necessary
-3. Include tests for new functionality
-4. Ensure all tests pass
-5. Link any related issues in your pull request description
-6. Be responsive to feedback and questions
+### Setting up the Development Environment
 
-## Coding Standards
+1. Fork the repository on GitHub
+2. Clone your fork locally:
+   ```bash
+   git clone https://github.com/your-username/hydra.git
+   cd hydra
+   ```
+3. Install development dependencies:
+   ```bash
+   pip install -r requirements.txt
+   pip install -e ".[dev]"
+   ```
+4. Set up pre-commit hooks:
+   ```bash
+   pre-commit install
+   ```
 
-- Follow the existing code style in the project
-- Write clear, readable, and maintainable code
-- Include comments for complex logic or algorithms
-- Adhere to language-specific best practices
+### Making Changes
 
-### Python Specific Guidelines
+1. Create a new branch for your changes:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+2. Make your changes and commit them with clear, descriptive messages.
+3. Write or update tests as needed.
+4. Ensure all tests pass:
+   ```bash
+   python -m pytest
+   ```
+5. Update documentation as necessary.
 
+### Submitting Pull Requests
+
+1. Push your branch to your fork:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+2. Open a pull request from your branch to the main repository.
+3. Clearly describe the changes and their purpose.
+4. Reference any related issues.
+5. Be responsive to feedback and questions.
+
+## Code Standards
+
+- Follow PEP 8 style guidelines for Python code
+- Include docstrings and type hints
+- Write unit tests for new functionality
+- Keep functions focused and modular
+- Use descriptive variable and function names
+- Add comments for complex sections
+
+### Language-Specific Guidelines
+
+#### Python
 - Follow PEP 8 style guidelines
 - Use type hints where appropriate
 - Document functions and classes with docstrings
 
-### C/C++ Specific Guidelines
-
+#### C/C++ (if applicable)
 - Follow the project's existing C/C++ style
 - Avoid unsafe functions and constructs
 - Check for memory leaks and buffer overflows
 - Use consistent naming conventions
 
-## Cryptographic Considerations
+## Security Considerations
 
 When contributing to cryptographic code:
 
-- **Do not** invent your own cryptographic primitives without extensive review
-- **Do** follow established cryptographic best practices
-- **Document** security assumptions and limitations
-- **Consider** side-channel attack vectors in implementations
+1. **Avoid Common Pitfalls**: Be aware of timing attacks, side-channel vulnerabilities, and other cryptographic pitfalls.
+2. **Randomness is Critical**: Any use of randomness should use cryptographically secure random number generators.
+3. **Document Security Assumptions**: Clearly document any security assumptions or limitations.
+4. **Report Security Issues Privately**: If you discover a security vulnerability, please report it privately following our [Security Policy](SECURITY.md).
+5. **Don't Invent Primitives**: Don't invent your own cryptographic primitives without extensive review.
+6. **Follow Best Practices**: Follow established cryptographic best practices.
+7. **Consider Side-Channels**: Consider side-channel attack vectors in implementations.
 
-## Development Environment
+## Review Process
 
-### Setting Up
+Pull requests will be reviewed by project maintainers. The review process includes:
 
-```bash
-# Clone your fork
-git clone https://github.com/yourusername/hydra-encryption.git
-cd hydra-encryption
-
-# Install development dependencies
-pip install -e ".[dev]"
-```
-
-### Running Tests
-
-```bash
-# Run all tests
-pytest
-
-# Run specific test file
-pytest tests/test_cipher.py
-
-# Run with coverage
-pytest --cov=hydra
-```
+1. Code quality review
+2. Test coverage verification
+3. Documentation review
+4. Security considerations
+5. Automated tests must pass
+6. At least one maintainer must approve the changes
+7. Security-related changes require additional review
+8. Significant changes to the core algorithm require cryptographic review
 
 ## Documentation Guidelines
 
@@ -100,17 +117,15 @@ pytest --cov=hydra
 - Include examples where appropriate
 - Explain cryptographic concepts for educational purposes
 
-## Review Process
+## License
 
-All submissions require review before being merged:
-
-1. Automated tests must pass
-2. At least one maintainer must approve the changes
-3. Security-related changes require additional review
-4. Significant changes to the core algorithm require cryptographic review
+By contributing, you agree that your contributions will be licensed under the project's MIT license.
 
 ## Questions?
 
-If you have questions about contributing, please open a GitHub issue labeled "question".
+If you have questions or need help, feel free to:
 
-Thank you for contributing to making encryption more secure and accessible!
+- Open an issue with your question labeled "question"
+- Contact the maintainers
+
+Thank you for contributing to HYDRA!
