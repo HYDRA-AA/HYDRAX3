@@ -17,7 +17,7 @@ try:
         encrypt, decrypt, generate_key, derive_key_from_password,
         encrypt_file, decrypt_file, UnifiedHydraCipher
     )
-    print("✅ Successfully imported hydra_crypto package")
+    print("[OK] Successfully imported hydra_crypto package")
 except ImportError:
     # If not installed, try to import from package directory
     sys.path.insert(0, os.path.abspath('.'))
@@ -26,9 +26,9 @@ except ImportError:
             encrypt, decrypt, generate_key, derive_key_from_password,
             encrypt_file, decrypt_file, UnifiedHydraCipher
         )
-        print("✅ Successfully imported from local directory")
+        print("[OK] Successfully imported from local directory")
     except ImportError as e:
-        print(f"❌ Failed to import hydra_crypto package: {e}")
+        print(f"[ERROR] Failed to import hydra_crypto package: {e}")
         print("   Make sure you run this script from the package root directory")
         print("   or install the package with: pip install -e .")
         sys.exit(1)
@@ -48,13 +48,13 @@ def run_tests():
             duration = time.time() - start_time
             if result:
                 passed += 1
-                print(f"✅ Passed ({duration:.2f}s)")
+                print(f"[PASSED] ({duration:.2f}s)")
                 return True
             else:
-                print(f"❌ Failed ({duration:.2f}s)")
+                print(f"[FAILED] ({duration:.2f}s)")
                 return False
         except Exception as e:
-            print(f"❌ Exception: {e}")
+            print(f"[ERROR] Exception: {e}")
             return False
     
     # Test 1: Basic encryption/decryption
@@ -198,8 +198,8 @@ if __name__ == "__main__":
     success = run_tests()
     
     if success:
-        print("\n🎉 All tests passed! The package is working correctly.")
+        print("\n[SUCCESS] All tests passed! The package is working correctly.")
         sys.exit(0)
     else:
-        print("\n❌ Some tests failed. Please check the output above.")
+        print("\n[FAILURE] Some tests failed. Please check the output above.")
         sys.exit(1)
