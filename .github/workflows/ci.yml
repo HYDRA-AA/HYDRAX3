@@ -34,9 +34,10 @@ jobs:
       run: |
         flake8 hydra_crypto --count --select=E9,F63,F7,F82 --show-source --statistics
     
-    - name: Test with pytest
+    - name: Run test package
       run: |
-        python -m pytest hydra_crypto/test_package.py -v
+        cd hydra_crypto
+        python test_package.py
     
     - name: Test package import
       run: |
